@@ -1,0 +1,3 @@
+data_dir = 'data'
+airports = 'data/airports.xlsx'
+travel_history = 'data/travel_history.xlsx'

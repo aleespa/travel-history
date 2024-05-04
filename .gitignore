@@ -1,0 +1,9 @@
+venv
+.idea
+*.xml
+*.xlsx
+*.cpg
+*.dbf
+*.prj
+*.shp
+*.shx

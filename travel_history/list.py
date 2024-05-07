@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import List, Optional
 
 import pandas as pd
-import toml
 from matplotlib import pyplot as plt
 from pyproj import Geod
 from shapely import LineString

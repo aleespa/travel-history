@@ -21,8 +21,9 @@ travel_list = TravelList([TravelRecord.from_row(row)
                           for _, row in travel_history.iterrows()],
                          airports)
 travel_list.generate_map(data_dir, results_path)
-travel_list.generate_video_map(data_dir=data_dir,
-                               results_dir=results_path / "video",
-                               initial_date=datetime.datetime(2014, 1, 1),
-                               final_date=datetime.datetime(2024, 5, 1)
-                               )
+travel_list.generate_video_map(
+    data_dir=data_dir,
+    results_dir=results_path / "video",
+    initial_date=datetime.datetime(2014, 1, 1),
+    final_date=datetime.datetime(2025, 6, 1)
+)

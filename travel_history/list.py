@@ -30,12 +30,13 @@ class TravelList:
         self.world = self.world[~self.world['ISO_A3'].isin(['ATA'])]
         self.world = self.world.to_crs(epsg=4326)
 
-    def generate_video_map(self,
-                           results_dir: Path,
-                           data_dir: Path,
-                           initial_date: datetime.datetime,
-                           final_date: datetime.datetime,
-                           video_name="travel_history"):
+    def generate_video_map(
+            self,
+            results_dir: Path,
+            data_dir: Path,
+            initial_date: datetime.datetime,
+            final_date: datetime.datetime,
+            video_name="travel_history") -> None:
         self.init_world_map(data_dir)
         fig, ax = plt.subplots(figsize=(9.2, 4.75), dpi=100)
         months = pd.date_range(start=initial_date,
@@ -53,13 +54,14 @@ class TravelList:
                         video_name + ".mp4")
         remove_png_files(results_dir)
 
-    def generate_map(self,
-                     data_dir,
-                     results_dir: Path,
-                     name="travel_map",
-                     max_date: Optional[datetime.datetime] = None,
-                     fig=None,
-                     ax=None):
+    def generate_map(
+            self,
+            data_dir,
+            results_dir: Path,
+            name="travel_map",
+            max_date: Optional[datetime.datetime] = None,
+            fig=None,
+            ax=None):
         if max_date is None:
             max_date = max(travel_record.date
                            for travel_record in self.travel_list)
